@@ -92,8 +92,8 @@ header:after {
 /* Create a reusable pop-in animation class 
 to apply to multiple DOM elements. */
 .animate-pop-in {
-  -webkit-animation: pop-in 0.6s ease-out forwards;
-  animation: pop-in 0.6s ease-out forwards;
+  -webkit-animation: pop-in 0.6s cubic-bezier(0,.99,.35,1.23) forwards;
+  animation: pop-in 0.6s cubic-bezier(0,.99,.35,1.23) forwards;
   opacity: 0;
 }
 
