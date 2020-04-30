@@ -27,6 +27,9 @@ header {
     positioning.
 */
 header:before {
+  /* Apply the animation key frame to this 
+  pseudo-element. */
+  animation: fade-slide-down 2s ease-out forwards;
   /* With multiple backgrounds, they are applied 
   in order, with subsequent backgorunds being 
   placed underneath preceeding backgrounds. */
@@ -74,4 +77,20 @@ header:after {
   -webkit-transform: translateZ(0.1px);
   transform: translateZ(0.1px);
   z-index: 10;
+}
+
+/* Animations */
+
+/* This keyframe animation will fade in 
+from invisible to fully visible, and 
+translate downwards. */
+@keyframes fade-slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }
