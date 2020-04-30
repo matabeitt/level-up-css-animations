@@ -96,6 +96,8 @@ to apply to multiple DOM elements. */
   opacity: 0;
 }
 
+/* Animation delay on an element by element 
+basis. */
 .rocky-dashed {
   animation-delay: 0.6s;
 }
