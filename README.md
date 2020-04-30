@@ -57,3 +57,9 @@ The default options for timing your implementations, i.e. how quickly do they ex
 ```
 
 We override the use of `ease-out` for example, but using this `cubic-bezier(...)` function.
+
+### Synopsis
+
+We have added animations to the Hero header background image in order to create a sense of style. The Hero header title and text content are also animationed to pop-in after the image has loaded, this engages the user. Lastly, we have animatied the rotation near the bottom of the header to engage the users so that they know of additonal content.
+
+The styling decisions were in part for creating a higher class look and feel, but also to drive user engagement to the **Call to Action** as well as the rest of the site.
