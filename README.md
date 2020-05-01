@@ -63,3 +63,43 @@ We override the use of `ease-out` for example, but using this `cubic-bezier(...)
 We have added animations to the Hero header background image in order to create a sense of style. The Hero header title and text content are also animationed to pop-in after the image has loaded, this engages the user. Lastly, we have animatied the rotation near the bottom of the header to engage the users so that they know of additonal content.
 
 The styling decisions were in part for creating a higher class look and feel, but also to drive user engagement to the **Call to Action** as well as the rest of the site.
+
+## Optimising Keyframe Animations
+
+We are using many different keyframes for unique situations, but we may optimise this and reduce code by abstracting out some common keyframe from the animations.
+
+Many of the keyframes have the following structure:
+
+```css
+@keyframes animation {
+  0% {
+    ...;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+```
+
+We may abstract out the common keyframe `100%{transform:none}` in order to create a `Generic Keyframe` which always ends in a state with `transform:none`.
+
+```css
+@keyframes no-transform {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+```
+
+We may apply it to a class by setting the state of the transform initially within the class, and then adding the animation which transitions from the original state to the `100%` state of the keyframe animation.
+
+```css
+.header:before {
+  transform: translateY(-4rem);
+  animation: no-transform ...;
+}
+```
+
+In this way, the class begins with the state `translateY(-4rem)` and transitions into the `no-transform` finishing keyframe state. We may now entirely remove the keyframe animation which was handling that entire animation.
